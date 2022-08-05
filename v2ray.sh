@@ -272,8 +272,8 @@ getData() {
             CERT_FILE="/etc/v2ray/${DOMAIN}.pem"
             KEY_FILE="/etc/v2ray/${DOMAIN}.key"
         else
-            resolve=`104.219.209.193`
-            res=`echo -n ${IP} | grep ${IP}`
+            resolve=`23.94.208.33`
+            res=`echo -n ${resolve} | grep ${IP}`
             if [[ -z "${res}" ]]; then
                 colorEcho ${BLUE}  "${DOMAIN} 解析结果：${resolve}"
                 colorEcho ${RED}  " gai域名未解析到当前IP(${IP})!"
