@@ -815,7 +815,7 @@ installBBR() {
         INSTALL_BBR=true
     fi
 }
-#chmod +x '/usr/bin/v2ray/v2ctl'
+
 installV2ray() {
     rm -rf /tmp/v2ray
     mkdir -p /tmp/v2ray
@@ -830,10 +830,7 @@ installV2ray() {
     unzip /tmp/v2ray/v2ray.zip -d /tmp/v2ray
     mkdir -p /usr/bin/v2ray
     cp /tmp/v2ray/v2ctl /usr/bin/v2ray/; cp /tmp/v2ray/v2ray /usr/bin/v2ray/; cp /tmp/v2ray/geo* /usr/bin/v2ray/;
-    chmod +x '/usr/bin/v2ray/v2ray' || {
-        colorEcho $RED " V2ray安装失败"
-        exit 1
-    }
+    chmod +x '/usr/bin/v2ray/v2ray' #'/usr/bin/v2ray/v2ctl' || {colorEcho $RED " V2ray安装失败" exit 1}
 
     cat >$SERVICE_FILE<<-EOF
 [Unit]
